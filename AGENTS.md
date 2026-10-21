@@ -12,12 +12,13 @@ GitHub Pages at https://mktflow-io.github.io.
 Since 2026-10-11 the repository is hosted on the Daftech forge: https://git.daftech.io/mktflow-io/mktflow-io.github.io
 (tickets and pull requests there; `main` is protected, merges by the user only).
 https://github.com/mktflow-io/mktflow-io.github.io is the copy GitHub Pages publishes from. It no longer follows the
-forge: its push mirror was removed when the mirror closed (phase 6 of the migration, daftech-cluster,
-`docs/forge/CONCEPTION.md` § 4.1). GitHub Actions is disabled on it, and **GitHub Pages does not republish without
-Actions** (verified on 2026-10-11: `.nojekyll` does not change that). The published site stays frozen at the content
-of commit `d1c29e6` until the page moves to the relay (decision 30); the GitHub copy is archived after that move. An
-urgent publication before then means updating the GitHub copy by hand and re-enabling Actions for one build: ask the
-Coordinator first.
+forge: its push mirror was removed when the mirror closed (phase 6 of the migration, 2026-10-22, daftech-cluster,
+`docs/forge/CONCEPTION.md` § 4.1), and it is archived, read-only, since that day. GitHub Pages still serves the page
+from the archived copy (checked at the archiving). GitHub Actions is disabled on it, and **GitHub Pages does not
+republish without Actions** (verified on 2026-10-11: `.nojekyll` does not change that). The published site stays
+frozen at the content of commit `d1c29e6` until the page moves to the relay (decision 30). An urgent publication
+before then means unarchiving the GitHub copy, updating it by hand, re-enabling Actions for one build, then disabling
+Actions and archiving the copy again: ask the Coordinator first.
 
 ## Repository Contents
 
@@ -48,6 +49,6 @@ does not follow until the page moves to the relay (see "Where the repository liv
 
 | Property | Value |
 |----------|-------|
-| **Repo** | https://git.daftech.io/mktflow-io/mktflow-io.github.io (frozen copy on GitHub, which Pages publishes: `mktflow-io/mktflow-io.github.io`) |
+| **Repo** | https://git.daftech.io/mktflow-io/mktflow-io.github.io (archived copy on GitHub, which Pages publishes: `mktflow-io/mktflow-io.github.io`) |
 | **URL** | https://mktflow-io.github.io |
 | **Last updated** | 2026-10-21 |

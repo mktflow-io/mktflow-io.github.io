@@ -11,13 +11,13 @@ GitHub Pages at https://mktflow-io.github.io.
 
 Since 2026-10-11 the repository is hosted on the Daftech forge: https://git.daftech.io/mktflow-io/mktflow-io.github.io
 (tickets and pull requests there; `main` is protected, merges by the user only).
-https://github.com/mktflow-io/mktflow-io.github.io is a read-only push mirror, kept because GitHub Pages still
-publishes the site from it until phase 6 of the migration (daftech-cluster, `docs/forge/CONCEPTION.md` § 4.1,
-decision 30). GitHub Actions is disabled on the mirror, and **GitHub Pages does not republish without Actions**
-(verified on 2026-10-11: `.nojekyll` does not change that). The published site is therefore frozen at the content
-of commit `d1c29e6` until the page leaves GitHub Pages (phase 6). Decision of 2026-10-11: accepted, no republishing
-before then. To publish an urgent change anyway: re-enable Actions on this repository only, merge, check
-`gh api repos/mktflow-io/mktflow-io.github.io/pages/builds/latest`, then disable Actions again.
+https://github.com/mktflow-io/mktflow-io.github.io is the copy GitHub Pages publishes from. It no longer follows the
+forge: its push mirror was removed when the mirror closed (phase 6 of the migration, daftech-cluster,
+`docs/forge/CONCEPTION.md` § 4.1). GitHub Actions is disabled on it, and **GitHub Pages does not republish without
+Actions** (verified on 2026-10-11: `.nojekyll` does not change that). The published site stays frozen at the content
+of commit `d1c29e6` until the page moves to the relay (decision 30); the GitHub copy is archived after that move. An
+urgent publication before then means updating the GitHub copy by hand and re-enabling Actions for one build: ask the
+Coordinator first.
 
 ## Repository Contents
 
@@ -30,7 +30,7 @@ before then. To publish an urgent change anyway: re-enable Actions on this repos
 ## Conventions
 
 - **Pure static, no build system.** `index.html` is self-contained — open a pull request on the forge;
-  once merged, the push mirror carries `main` to GitHub, but Pages does not republish while Actions is disabled
+  once merged, nothing reaches GitHub any more (push mirror removed), so the published page does not change
   (see above). No npm, no framework, no CI.
 - **Logo is the canonical copy** referenced elsewhere by URL
   (`https://mktflow-io.github.io/assets/logo.png`, e.g. the `mktflow-io/.github` profile README).
@@ -42,12 +42,12 @@ before then. To publish an urgent change anyway: re-enable Actions on this repos
 ## Editing
 
 Edit `index.html` or `assets/` in a branch, open a pull request on the forge, get it merged. The published site
-only follows if Actions is re-enabled on the GitHub mirror for that publication (see "Where the repository lives").
+does not follow until the page moves to the relay (see "Where the repository lives").
 
 ---
 
 | Property | Value |
 |----------|-------|
-| **Repo** | https://git.daftech.io/mktflow-io/mktflow-io.github.io (mirror: `mktflow-io/mktflow-io.github.io` on GitHub) |
+| **Repo** | https://git.daftech.io/mktflow-io/mktflow-io.github.io (frozen copy on GitHub, which Pages publishes: `mktflow-io/mktflow-io.github.io`) |
 | **URL** | https://mktflow-io.github.io |
-| **Last updated** | 2026-10-11 |
+| **Last updated** | 2026-10-21 |
